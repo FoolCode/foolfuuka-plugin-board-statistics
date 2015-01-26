@@ -1,12 +1,12 @@
 <?php
 
 use Doctrine\DBAL\Schema\Schema;
-use Foolz\Foolframe\Model\Autoloader;
-use Foolz\Foolframe\Model\Context;
-use Foolz\Foolframe\Model\DoctrineConnection;
-use Foolz\Foolframe\Model\Plugins;
-use Foolz\Foolframe\Model\Uri;
-use Foolz\Foolfuuka\Model\RadixCollection;
+use Foolz\FoolFrame\Model\Autoloader;
+use Foolz\FoolFrame\Model\Context;
+use Foolz\FoolFrame\Model\DoctrineConnection;
+use Foolz\FoolFrame\Model\Plugins;
+use Foolz\FoolFrame\Model\Uri;
+use Foolz\FoolFuuka\Model\RadixCollection;
 use Foolz\Plugin\Event;
 use Symfony\Component\Routing\Route;
 
@@ -22,14 +22,14 @@ class HHVM_BS
                 $autoloader = $context->getService('autoloader');
 
                 $autoloader->addClassMap([
-                    'Foolz\Foolframe\Controller\Admin\Plugins\BoardStatistics' => __DIR__ . '/classes/controller/admin.php',
-                    'Foolz\Foolfuuka\Controller\Chan\BoardStatistics' => __DIR__ . '/classes/controller/chan.php',
-                    'Foolz\Foolfuuka\Plugins\BoardStatistics\Model\BoardStatistics' => __DIR__ . '/classes/model/board_statistics.php',
-                    'Foolz\Foolfuuka\Plugins\BoardStatistics\Console\Console' => __DIR__ . '/classes/console/console.php'
+                    'Foolz\FoolFrame\Controller\Admin\Plugins\BoardStatistics' => __DIR__ . '/classes/controller/admin.php',
+                    'Foolz\FoolFuuka\Controller\Chan\BoardStatistics' => __DIR__ . '/classes/controller/chan.php',
+                    'Foolz\FoolFuuka\Plugins\BoardStatistics\Model\BoardStatistics' => __DIR__ . '/classes/model/board_statistics.php',
+                    'Foolz\FoolFuuka\Plugins\BoardStatistics\Console\Console' => __DIR__ . '/classes/console/console.php'
                 ]);
 
                 $context->getContainer()
-                    ->register('foolfuuka-plugin.board_statistics', 'Foolz\Foolfuuka\Plugins\BoardStatistics\Model\BoardStatistics')
+                    ->register('foolfuuka-plugin.board_statistics', 'Foolz\FoolFuuka\Plugins\BoardStatistics\Model\BoardStatistics')
                     ->addArgument($context);
 
                 Event::forge('Foolz\FoolFrame\Model\Context::handleWeb#obj.afterAuth')
@@ -50,7 +50,7 @@ class HHVM_BS
                                     '/admin/plugins/board_statistics/{_suffix}',
                                     [
                                         '_suffix' => 'manage',
-                                        '_controller' => '\Foolz\Foolframe\Controller\Admin\Plugins\BoardStatistics::manage'
+                                        '_controller' => '\Foolz\FoolFrame\Controller\Admin\Plugins\BoardStatistics::manage'
                                     ],
                                     [
                                         '_suffix' => '.*'
@@ -74,7 +74,7 @@ class HHVM_BS
                 Event::forge('Foolz\FoolFrame\Model\Context::handleConsole#obj.app')
                     ->setCall(function ($result) use ($context) {
                         $result->getParam('application')
-                            ->add(new \Foolz\Foolfuuka\Plugins\BoardStatistics\Console\Console($context));
+                            ->add(new \Foolz\FoolFuuka\Plugins\BoardStatistics\Console\Console($context));
                     });
 
                 Event::forge('Foolz\FoolFrame\Model\Context::handleWeb#obj.routing')
@@ -90,7 +90,7 @@ class HHVM_BS
                                 '/' . $radix->shortname . '/statistics/{_suffix}',
                                 [
                                     '_suffix' => '',
-                                    '_controller' => '\Foolz\Foolfuuka\Controller\Chan\BoardStatistics::statistics',
+                                    '_controller' => '\Foolz\FoolFuuka\Controller\Chan\BoardStatistics::statistics',
                                     'radix_shortname' => $radix->shortname
                                 ],
                                 [

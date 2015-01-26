@@ -1,15 +1,15 @@
 <?php
 
-namespace Foolz\Foolfuuka\Controller\Chan;
+namespace Foolz\FoolFuuka\Controller\Chan;
 
-use Foolz\Foolframe\Model\Plugins;
-use Foolz\Foolframe\Model\Uri;
-use Foolz\Foolfuuka\Plugins\BoardStatistics\Model\BoardStatistics as BS;
+use Foolz\FoolFrame\Model\Plugins;
+use Foolz\FoolFrame\Model\Uri;
+use Foolz\FoolFuuka\Plugins\BoardStatistics\Model\BoardStatistics as BS;
 use Foolz\Plugin\Plugin;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class BoardStatistics extends \Foolz\Foolfuuka\Controller\Chan
+class BoardStatistics extends \Foolz\FoolFuuka\Controller\Chan
 {
     /**
      * @var Plugin

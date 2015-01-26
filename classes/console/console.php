@@ -1,11 +1,11 @@
 <?php
 
-namespace Foolz\Foolfuuka\Plugins\BoardStatistics\Console;
+namespace Foolz\FoolFuuka\Plugins\BoardStatistics\Console;
 
-use Foolz\Foolframe\Model\Context;
-use Foolz\Foolframe\Model\DoctrineConnection;
-use Foolz\Foolfuuka\Model\RadixCollection;
-use Foolz\Foolfuuka\Plugins\BoardStatistics\Model\BoardStatistics as BS;
+use Foolz\FoolFrame\Model\Context;
+use Foolz\FoolFrame\Model\DoctrineConnection;
+use Foolz\FoolFuuka\Model\RadixCollection;
+use Foolz\FoolFuuka\Plugins\BoardStatistics\Model\BoardStatistics as BS;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -15,7 +15,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 class Console extends Command
 {
     /**
-     * @var \Foolz\Foolframe\Model\Context
+     * @var \Foolz\FoolFrame\Model\Context
      */
     protected $context;
 

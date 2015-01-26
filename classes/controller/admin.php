@@ -1,12 +1,12 @@
 <?php
 
-namespace Foolz\Foolframe\Controller\Admin\Plugins;
+namespace Foolz\FoolFrame\Controller\Admin\Plugins;
 
-use \Foolz\Foolfuuka\Plugins\BoardStatistics\Model\BoardStatistics as BS;
+use \Foolz\FoolFuuka\Plugins\BoardStatistics\Model\BoardStatistics as BS;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class BoardStatistics extends \Foolz\Foolframe\Controller\Admin
+class BoardStatistics extends \Foolz\FoolFrame\Controller\Admin
 {
     /**
      * @var BS

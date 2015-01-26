@@ -1,11 +1,11 @@
 <?php
 
-namespace Foolz\Foolfuuka\Plugins\BoardStatistics\Model;
+namespace Foolz\FoolFuuka\Plugins\BoardStatistics\Model;
 
-use Foolz\Foolframe\Model\Context;
-use Foolz\Foolframe\Model\DoctrineConnection;
-use Foolz\Foolframe\Model\Model;
-use Foolz\Foolframe\Model\Preferences;
+use Foolz\FoolFrame\Model\Context;
+use Foolz\FoolFrame\Model\DoctrineConnection;
+use Foolz\FoolFrame\Model\Model;
+use Foolz\FoolFrame\Model\Preferences;
 
 class BoardStatistics extends Model
 {
